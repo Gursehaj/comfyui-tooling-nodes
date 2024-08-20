@@ -16,6 +16,9 @@ class LoadImageBase64:
     CATEGORY = "external_tooling"
     FUNCTION = "load_image"
 
+    def IS_CHANGED(self, old, new):
+        return True
+
     def load_image(self, image):
         imgdata = base64.b64decode(image)
         img = Image.open(BytesIO(imgdata))
